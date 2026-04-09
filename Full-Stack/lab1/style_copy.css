@@ -57,11 +57,7 @@ body{
     margin-right: auto;
     justify-content: center;
     align-items: center;
-    .titulo_tbl{
-        color:red
-    }
 }
-
 
 .lista{
     background-color: yellow;

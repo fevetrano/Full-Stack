@@ -55,10 +55,10 @@ ctx.fill();
 ctx.stroke();
 ctx.closePath();
 
-//meio circulo amarelo
+//meio circulo ciano
 ctx.beginPath();
 ctx.lineWidth = 2;
-ctx.fillStyle = 'yellow';
+ctx.fillStyle = '#00FDFF';
 ctx.strokeStyle = 'green';
 ctx.arc(400,800,90,1.0*Math.PI,2.0*Math.PI); // arco = ctx. a rc (x,y,raio,°inicio,°fim)
 ctx.fill();
@@ -68,7 +68,7 @@ ctx.closePath();
 //circulo amarelo
 ctx.beginPath();
 ctx.lineWidth = 2;
-ctx.fillStyle = 'yellor';
+ctx.fillStyle = 'yellow';
 ctx.strokeStyle = 'green';
 ctx.arc(175,625,30,1.5*Math.PI,4*Math.PI); // arco = ctx. a rc (x,y,raio,°inicio,°fim)
 ctx.fill();
@@ -78,7 +78,7 @@ ctx.closePath();
 //circulo amarelo
 ctx.beginPath();
 ctx.lineWidth = 2;
-ctx.fillStyle = 'yellor';
+ctx.fillStyle = 'yellow';
 ctx.strokeStyle = 'green';
 ctx.arc(625,625,30,1.5*Math.PI,4*Math.PI); // arco = ctx. a rc (x,y,raio,°inicio,°fim)
 ctx.fill();
@@ -128,7 +128,7 @@ ctx.closePath();
 //circulo ciano
 ctx.beginPath();
 ctx.lineWidth = 2;
-ctx.fillStyle = 'yellor';
+ctx.fillStyle = '#00FDFF';
 ctx.strokeStyle = 'blue';
 ctx.arc(400,315,30,1.5*Math.PI,4*Math.PI); // arco = ctx. a rc (x,y,raio,°inicio,°fim)
 ctx.fill();
@@ -189,4 +189,20 @@ ctx.arc(400,800,200,15*Math.PI,1.5*Math.PI); // arco = ctx. a rc (x,y,raio,°ini
 ctx.stroke();
 ctx.closePath();
 
+//meio circulo verde
+ctx.beginPath();
+ctx.lineWidth = 2;
+ctx.strokeStyle = 'green';
+ctx.arc(400,800,150,1.5*Math.PI,1*Math.PI); // arco = ctx. a rc (x,y,raio,°inicio,°fim)
+ctx.stroke();
+ctx.closePath();
+
+//texto
+ctx.beginPath();
+ctx.lineWidth = 2;
+ctx.fillStyle = 'black';
+ctx.font = "60px Arial";
+ctx.textAlign = "center";
+ctx.fillText ("Canvas", 400, 130)
+ctx.closePath();
 

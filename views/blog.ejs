@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <title>Blog - Lab 9</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Blog Online</h1>
+        <a href="/cadastrar_post"><button>Criar Novo Post</button></a>
+        <hr>
+        <% if (posts.length === 0) { %>
+            <p>Nenhum post encontrado.</p>
+        <% } %>
+        <% posts.forEach(post => { %>
+            <div class="card">
+                <h2><%= post.titulo %></h2>
+                <p><strong>Resumo:</strong> <%= post.resumo %></p>
+                <p><%= post.conteudo %></p>
+                <small>Postado em: <%= post.data %></small>
+            </div>
+            <br>
+        <% }) %>
+        <p><a href="/projects.html">Voltar aos Projetos</a></p>
+    </div>
+</body>
+</html>

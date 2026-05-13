@@ -1,0 +1,38 @@
+.fernando{
+    color: rgb(2, 168, 2);
+    font-size: 25;
+}
+
+.fernando:hover{
+        color: rgb(1, 75, 1)
+    }
+
+.txt{
+    color: white;
+    font-size: 15pt;
+}
+
+.lista{
+    color:rgb(2, 168, 2);
+    font-size: 18
+}
+
+.lista:hover{
+    color: rgb(1, 75, 1) 
+}
+
+.links{
+    color:rgb(1, 75, 1);
+    font-size: 18;
+}
+
+.links:hover{
+    color:rgb(2, 168, 2)
+}
+
+div{
+    text-align: center;
+}
+body{
+    background-color: rgb(184, 184, 184);
+}

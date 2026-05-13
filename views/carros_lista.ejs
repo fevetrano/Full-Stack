@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <title>Loja de Carros - Lab 10</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Loja de Carros</h1>
+        <p>Bem-vindo, <strong><%= user.db_nome %></strong>!</p>
+        <p>Você está logado como: <strong><%= user.isAdmin ? "Administrador (ADM)" : "Cliente" %></strong></p>
+        
+        <% if (user.isAdmin) { %>
+            <div style="background: #e1f5fe; padding: 15px; border: 1px solid #03a9f4; border-radius: 8px; margin-bottom: 20px;">
+                <p>Você possui privilégios de ADM. Gerencie o estoque aqui:</p>
+                <a href="/gerenciar_carros"><button style="background-color: #03a9f4;">Painel de Gerência</button></a>
+            </div>
+        <% } %>
+
+        <hr>
+
+        <div class="grid">
+            <% if (carros.length === 0) { %>
+                <p>Estoque vazio no momento.</p>
+            <% } %>
+
+            <% carros.forEach(carro => { %>
+                <div class="card">
+                    <h3><%= carro.marca %> <%= carro.modelo %></h3>
+                    <p>Ano: <%= carro.ano %></p>
+                    <p>Disponível: 
+                        <% if (carro.qtde_disponivel > 0) { %>
+                            <strong style="color: green;"><%= carro.qtde_disponivel %> unidades</strong>
+                        <% } else { %>
+                            <strong style="color: red;">ESGOTADO</strong>
+                        <% } %>
+                    </p>
+                    
+                    <% if (carro.qtde_disponivel > 0) { %>
+                        <form action="/vender_carro" method="post">
+                            <input type="hidden" name="id" value="<%= carro._id %>">
+                            <input type="submit" value="Comprar Agora" style="background-color: #f39c12;">
+                        </form>
+                    <% } else { %>
+                        <button disabled style="background-color: #ccc; cursor: not-allowed;">Esgotado</button>
+                    <% } %>
+                </div>
+            <% }) %>
+        </div>
+        
+        <br>
+        <p><a href="/logout">Sair da Conta</a> | <a href="/projects.html">Projetos</a></p>
+    </div>
+</body>
+</html>

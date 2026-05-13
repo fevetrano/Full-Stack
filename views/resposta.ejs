@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <title>Status do Sistema</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Status do Sistema</h1>
+        <div class="card" style="text-align: center;">
+            <p style="font-size: 1.2rem;"><%= resposta %></p>
+            <% if (resposta.toLowerCase().includes('sucesso')) { %>
+                <br>
+                <a href="/lab10/home.html"><button>Ir para Home</button></a>
+            <% } %>
+        </div>
+        <br>
+        <button onclick="window.history.back()">Voltar</button>
+        <p><a href="/lab02/projects.html">Ir para Projetos</a></p>
+    </div>
+</body>
+</html>

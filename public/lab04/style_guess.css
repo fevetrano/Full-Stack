@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(184, 184, 184);
+}
+
+.txtPrincipal{
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.input1{
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+#txtNum1{
+    color: black;
+    display: flex;
+    justify-content: center;
+}

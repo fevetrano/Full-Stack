@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <title>ADM - Gerência de Estoque</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Painel de Gerência (ADM)</h1>
+        <p><a href="/carros">Ver Loja (Visão Cliente)</a> | <a href="/lab10/home.html">Home da Loja</a></p>
+
+        <hr>
+        
+        <h2>Cadastrar Novo Carro</h2>
+        <form action="/add_carro" method="post" style="max-width: 450px; margin: auto; background: #f9f9f9; padding: 20px; border-radius: 10px;">
+            <p>Marca: <input type="text" name="marca" required></p>
+            <p>Modelo: <input type="text" name="modelo" required></p>
+            <p>Ano: <input type="number" name="ano" required></p>
+            <p>Estoque Inicial: <input type="number" name="qtde_disponivel" required></p>
+            <input type="submit" value="Adicionar ao Banco">
+        </form>
+
+        <hr>
+
+        <h2>Controle de Estoque (CRUD)</h2>
+        <% if (carros.length === 0) { %>
+            <p>Não há carros para gerenciar.</p>
+        <% } %>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+        <% carros.forEach(carro => { %>
+            <div class="card" style="border: 2px solid #3498db; background: #fff;">
+                <form action="/atualizar_carro" method="post">
+                    <input type="hidden" name="id" value="<%= carro._id %>">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <p>Marca: <input type="text" name="marca" value="<%= carro.marca %>"></p>
+                        <p>Modelo: <input type="text" name="modelo" value="<%= carro.modelo %>"></p>
+                        <p>Ano: <input type="number" name="ano" value="<%= carro.ano %>"></p>
+                        <p>Qtde: <input type="number" name="qtde_disponivel" value="<%= carro.qtde_disponivel %>"></p>
+                    </div>
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                        <input type="submit" value="Salvar Alterações" style="flex: 2; background-color: #3498db;">
+                </form>
+                
+                <form action="/remover_carro" method="post" style="flex: 1;">
+                    <input type="hidden" name="id" value="<%= carro._id %>">
+                    <input type="submit" value="Excluir" style="background-color: #e74c3c;">
+                </form>
+                    </div>
+            </div>
+        <% }) %>
+        </div>
+    </div>
+</body>
+</html>
